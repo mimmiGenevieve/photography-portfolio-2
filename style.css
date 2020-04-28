@@ -1,0 +1,204 @@
+/*
+Theme Name: Portfolio
+Author: Mimmi Sandgren
+Author URL: http://mimmigenevieve.se/
+Description: Portfolio theme.
+Version: 1.0
+*/
+
+@import url('https://fonts.googleapis.com/css?family=Crimson+Text&display=swap');
+
+/*
+*
+* general design 
+*
+*/
+* {
+	padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    
+}
+
+html { overflow-y: scroll; }
+
+body {
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    background:#FFFFFF;
+    text-align: center;
+    color: #3d4b4e;
+    font-family: 'Crimson Text', serif;
+}
+
+.content { margin-top: 10%; }
+.single-content { margin: 0 auto; }
+.page-wrap { width: 100%; }
+.social img {  max-width: 32px; }
+.social a { margin: 10px; }
+.social { float: right; margin-right: 100px; margin-left: -140px; }
+.menuHeader { font-size: 250%; margin-top: 50px; }
+.menuHeaderText { margin-left: 40px; }
+a { text-decoration: none; color: #3d4b4e; }
+.custom-logo-link { background: transparent; }
+
+/* menu styling */
+.mainMenu { display: none; }
+
+/* the hamburger icon */
+.hamburger { cursor: pointer; float: left; }
+
+.hamburger1, .hamburger2, .hamburger3 {
+    width: 35px;
+    height: 5px;
+    background-color: #333;
+    margin: 6px 0;
+    transition: 0.4s;
+}
+
+/* Rotate first bar */
+.change .hamburger1 {
+    -webkit-transform: rotate(-45deg) translate(-9px, 6px) ;
+    transform: rotate(-45deg) translate(-9px, 6px) ;
+}
+
+/* Fade out the second bar */
+.change .hamburger2 {
+    opacity: 0;
+}
+
+/* Rotate last bar */
+.change .hamburger3 {
+    -webkit-transform: rotate(45deg) translate(-8px, -8px) ;
+    transform: rotate(45deg) translate(-8px, -8px) ;
+}
+
+
+  .post-meta { list-style: none; margin-bottom: 20px; }
+  .post-images, .overlay { display: none; }
+  .gridContent { width: 100%; }
+
+  /* to make sure the images display properly on smaller devices */
+  @media only screen and (max-width: 899px){
+
+  .gridContent .image-container {
+        margin: 0 auto !important;
+        display: block !important;
+        position: relative !important;
+        left: auto !important;
+        top: auto !important;
+    }
+
+  .gridContent .image-container img { height: auto; width: 100%; }
+	.menu { margin: 0 auto; }
+	.menu ul { list-style-type: none; }
+
+}
+
+
+  /*
+  *
+  * larger devices
+  *
+  */
+
+  @media only screen and (min-width: 900px){
+      
+/*
+*
+* menu-div 
+*
+*/
+.menu-wrap {
+    position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+    z-index: 1; /* Stay on top */
+    top: 0; /* Stay at the top */
+    left: 0;
+    width: 100%;
+    overflow: auto;
+    background:#FFFFFF;
+}
+
+/* the menu */
+.hamburger { display: none; }
+.mainMenu { display: block; margin-top: 20px; font-size: 120%; padding-bottom: 0; }
+.mainMenu ul { list-style-type: none; text-align: center; }
+.mainMenu ul li { margin-right: 20px; display: inline-block; }
+.mainMenu ul li a { display: block; }
+.mainMenu ul li a:hover { text-decoration-line: underline; text-decoration-style: dotted; text-decoration-color: lightgray; }
+
+/*
+*
+* content-div 
+*
+*/
+.content {
+    display: flex;
+    width: 100%;
+}
+
+.gridContent { width: 100%; margin-bottom: 1%; }
+
+/* the text that shows when hovering image */
+.overlay {
+    position: absolute;
+    visibility: hidden;
+    display: inline;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    flex: 1 0 200px;
+    padding: 10px;
+    opacity: .8;
+    transition: opacity .2s, visibility .2s;
+    overflow: hidden;
+    background-color: #333;
+    color: #FFFFFF;
+    margin: 5px;
+}
+
+.title h1 { font-weight: normal; }
+.image-container:hover .overlay { visibility: visible; }
+
+/*
+*
+* grid
+*
+*/
+  
+  /* clearfix */
+  .grid:after, .grid2:after {
+    content: '';
+    display: block;
+    clear: both;
+  }
+  
+  /* ---- grid-item ---- */
+  
+  .grid-sizer, .grid-item { width: 25%; }
+
+  .grid-item {
+    float: left;
+    position: relative;
+    text-align: center;
+    display: flex;
+    padding: 5px;
+  }
+
+  .grid-item img {
+      width: 100%;
+      height: auto !important;
+      display: block;
+  }
+  
+    /* ---- grid-item2 ---- */
+  
+    .grid-sizer2, .grid-item2 { width: 50%; }
+
+    .grid-item2 { grid-column: 2;
+      grid-row: 2;
+    }
+
+  }
